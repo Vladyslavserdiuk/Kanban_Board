@@ -4,7 +4,7 @@ import {Col, Card, Button, CardBody} from "reactstrap";
 
 function Task(props) {
 
-    const {task} = props;
+    const {task, changeTaskStatus} = props;
 
 
     return (
@@ -15,7 +15,12 @@ function Task(props) {
                         {task.name}
                     </CardBody>
                     <CardBody>
-                        <Button>Button</Button>
+                        {task.status !== 'todo' &&
+                        <Button onClick={()=>changeTaskStatus(task.id, 'left')}>←</Button>}
+                        {task.status !== 'done' &&
+                        <Button onClick={()=>changeTaskStatus(task.id, 'right')}>→</Button>}
+
+
                     </CardBody>
                 </Card>
 

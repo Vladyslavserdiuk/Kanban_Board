@@ -1,11 +1,11 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {Col} from "reactstrap";
 import Task from "./Task";
 
 
 function Column(props) {
 
-    const {tasks, title} = props
+    const {tasks, title, changeTaskStatus} = props
 
 
     return (
@@ -14,7 +14,11 @@ function Column(props) {
                 <h3>{title}</h3>
                 {tasks
                     .filter(el => el.status === title)
-                    .map(el => <Task task={el}/>)}
+                    .map(el =>
+                        <Task
+                            task={el}
+                            changeTaskStatus={changeTaskStatus}
+                        />)}
 
             </Col>
 
