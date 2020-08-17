@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import './App.css';
-import Container from "reactstrap/es/Container";
+import {Container, Row} from "reactstrap";
 import Column from "./Column";
 
 function App() {
@@ -15,29 +15,31 @@ function App() {
         {
             id: Math.random(),
             name: 'Second',
-            priority: 0,
+            priority: 1,
             status: 'progress'
         },
         {
             id: Math.random(),
             name: 'Third',
-            priority: 0,
+            priority: 2,
             status: 'review'
         },
         {
             id: Math.random(),
             name: 'Fourth',
-            priority: 0,
+            priority: 1,
             status: 'review'
         }
     ]
+    const [tasks, setTasks] = useState(taskList)
 
 
     return (
         <div>
             <Container>
-                <Column taskList={taskList}/>
-
+                <Row>
+                    <Column tasks={tasks}/>
+                </Row>
 
             </Container>
 
