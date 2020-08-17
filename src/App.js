@@ -38,7 +38,10 @@ function App() {
         <div>
             <Container>
                 <Row>
-                    <Column tasks={tasks}/>
+                    <Column title={'todo'} tasks={tasks}/>
+                    <Column title={'progress'} tasks={tasks}/>
+                    <Column title={'review'} tasks={tasks}/>
+                    <Column title={'done'} tasks={tasks}/>
                 </Row>
 
             </Container>

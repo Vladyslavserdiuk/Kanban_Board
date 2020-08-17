@@ -5,18 +5,21 @@ import Task from "./Task";
 
 function Column(props) {
 
-  const {tasks} = props
+    const {tasks, title} = props
 
 
-  return (
-    <div >
-      <Col>
-          {tasks.map(el => <Task task={el}/>)}
+    return (
+        <div>
+            <Col>
+                <h3>{title}</h3>
+                {tasks
+                    .filter(el => el.status === title)
+                    .map(el => <Task task={el}/>)}
 
-      </Col>
+            </Col>
 
-    </div>
-  );
+        </div>
+    );
 }
 
 export default Column;

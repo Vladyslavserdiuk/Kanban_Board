@@ -1,21 +1,28 @@
 import React from 'react';
-import {Col} from "reactstrap";
+import {Col, Card, Button, CardBody} from "reactstrap";
 
 
 function Task(props) {
 
-  const {task} = props;
+    const {task} = props;
 
 
-  return (
-    <div >
-      <Col>
-          {task.name}
+    return (
+        <div>
+            <Col>
+                <Card>
+                    <CardBody>
+                        {task.name}
+                    </CardBody>
+                    <CardBody>
+                        <Button>Button</Button>
+                    </CardBody>
+                </Card>
 
-      </Col>
+            </Col>
 
-    </div>
-  );
+        </div>
+    );
 }
 
 export default Task;
