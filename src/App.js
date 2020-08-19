@@ -17,19 +17,19 @@ function App() {
             id: Math.random(),
             name: 'Second',
             priority: 1,
-            status: 'todo'
+            status: 'progress'
         },
         {
             id: Math.random(),
             name: 'Third',
             priority: 2,
-            status: 'todo'
+            status: 'review'
         },
         {
             id: Math.random(),
             name: 'Fourth',
             priority: 2,
-            status: 'todo'
+            status: 'done'
         }
     ]
 
@@ -62,12 +62,12 @@ function App() {
 
     const [tasks, setTasks] = useState(taskList);
 
-    const addNewTask = (newTitle) => {
+    const addNewTask = (newTitle, newPriority, newStatus) => {
         const newTask = {
             id: Math.random(),
             name: newTitle,
-            priority: 0,
-            status: 'todo'
+            priority: newPriority,
+            status: newStatus
         }
         const newTasks = [...tasks, newTask]
         setTasks(newTasks)
