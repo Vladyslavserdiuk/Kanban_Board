@@ -14,6 +14,7 @@ function Column(props) {
                 <h3>{title}</h3>
                 {tasks
                     .filter(el => el.status === title)
+                    .sort((a, b) => b.priority - a.priority)
                     .map(el =>
                         <Task
                             task={el}

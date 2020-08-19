@@ -16,19 +16,19 @@ function App() {
             id: Math.random(),
             name: 'Second',
             priority: 1,
-            status: 'progress'
+            status: 'todo'
         },
         {
             id: Math.random(),
             name: 'Third',
             priority: 2,
-            status: 'review'
+            status: 'todo'
         },
         {
             id: Math.random(),
             name: 'Fourth',
             priority: 2,
-            status: 'review'
+            status: 'todo'
         }
     ]
 

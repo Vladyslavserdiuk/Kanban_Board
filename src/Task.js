@@ -15,10 +15,11 @@ function Task(props) {
                     <CardBody>
                         {task.name}
                         <Alert color={alertColors [task.priority]}>
-                            {task.priority}
-                            <Button onClick={() => changeTaskStatus(task.id, 'up')} size="sm">↑</Button>
+                            {task.priority !== 0 &&
+                            <Button onClick={() => changeTaskStatus(task.id, 'up')} size="sm">↑</Button>}
                             {" "}
-                            <Button onClick={() => changeTaskStatus(task.id, 'down')} size="sm">↓</Button>
+                            {task.priority !== 2 &&
+                            <Button onClick={() => changeTaskStatus(task.id, 'down')} size="sm">↓</Button>}
                         </Alert>
 
                     </CardBody>
