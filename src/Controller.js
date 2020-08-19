@@ -3,17 +3,17 @@ import {Col} from "reactstrap";
 import Task from "./Task";
 
 
-function Column(props) {
+function Controller(props) {
 
-    const {tasks, changeTaskStatus, column} = props
+    const {tasks, title, changeTaskStatus} = props
 
 
     return (
         <div>
             <Col>
-                <h3>{column.title}</h3>
+                <h3>{title}</h3>
                 {tasks
-                    .filter(el => el.status === column.status)
+                    .filter(el => el.status === title)
                     .sort((a, b) => b.priority - a.priority)
                     .map(el =>
                         <Task
@@ -27,4 +27,4 @@ function Column(props) {
     );
 }
 
-export default Column;
+export default Controller;

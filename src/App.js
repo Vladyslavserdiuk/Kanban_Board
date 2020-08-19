@@ -32,6 +32,29 @@ function App() {
         }
     ]
 
+    const columnList = [
+        {
+            id: Math.random(),
+            title: 'To do!',
+            status: 'todo'
+        },
+        {
+            id: Math.random(),
+            title: 'In progress...',
+            status: 'progress'
+        },
+        {
+            id: Math.random(),
+            title: 'Need review',
+            status: 'review'
+        },
+        {
+            id: Math.random(),
+            title: 'Done!!!',
+            status: 'done'
+        }
+    ]
+
     const statues = ['todo', 'progress', 'review', 'done'];
 
     const taskPriority = [0, 1, 2];
@@ -59,10 +82,11 @@ function App() {
         <div>
             <Container>
                 <Row>
-                    <Column changeTaskStatus={changeTaskStatus} title={'todo'} tasks={tasks}/>
-                    <Column changeTaskStatus={changeTaskStatus} title={'progress'} tasks={tasks}/>
-                    <Column changeTaskStatus={changeTaskStatus} title={'review'} tasks={tasks}/>
-                    <Column changeTaskStatus={changeTaskStatus} title={'done'} tasks={tasks}/>
+                    {columnList.map(el => <Column changeTaskStatus={changeTaskStatus} column={el} tasks={tasks}/>)}
+                    {/*<Column changeTaskStatus={changeTaskStatus} title={'todo'} tasks={tasks}/>*/}
+                    {/*<Column changeTaskStatus={changeTaskStatus} title={'progress'} tasks={tasks}/>*/}
+                    {/*<Column changeTaskStatus={changeTaskStatus} title={'review'} tasks={tasks}/>*/}
+                    {/*<Column changeTaskStatus={changeTaskStatus} title={'done'} tasks={tasks}/>*/}
                 </Row>
 
             </Container>
