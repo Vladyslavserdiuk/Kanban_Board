@@ -62,6 +62,17 @@ function App() {
 
     const [tasks, setTasks] = useState(taskList);
 
+    const addNewTask = (newTitle) => {
+        const newTask = {
+            id: Math.random(),
+            name: newTitle,
+            priority: 0,
+            status: 'todo'
+        }
+        const newTasks = [...tasks, newTask]
+        setTasks(newTasks)
+    }
+
     const changeTaskStatus = (taskId, direction) => {
         const newTasks = tasks.map(el => {
             if (el.id === taskId) {
@@ -82,7 +93,7 @@ function App() {
     return (
         <div>
             <Container>
-                <Controller />
+                <Controller addNewTask={addNewTask}/>
                 <Row>
                     {columnList.map(el => <Column changeTaskStatus={changeTaskStatus} column={el} tasks={tasks}/>)}
                     {/*<Column changeTaskStatus={changeTaskStatus} title={'todo'} tasks={tasks}/>*/}
