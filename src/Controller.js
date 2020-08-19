@@ -9,6 +9,11 @@ function Controller(props) {
     const [isModalOpen, setIsModalOpen] = useState(false)
     const [newTitle, setNewTitle] = useState('')
 
+    const addButtonHandler = () => {
+        addNewTask(newTitle)
+        setIsModalOpen(false)
+    }
+
 
 
     return (
@@ -25,7 +30,7 @@ function Controller(props) {
                     </Input>
                 </ModalBody>
                 <ModalFooter>
-                    <Button onClick={() =>addNewTask(newTitle) && setIsModalOpen(false)}>Do Something</Button>
+                    <Button onClick={addButtonHandler}>Add new Task</Button>
                     {' '}
                     <Button onClick={() => setIsModalOpen(false)}>Cancel</Button>
                 </ModalFooter>
