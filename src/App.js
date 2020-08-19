@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import './App.css';
 import {Container, Row} from "reactstrap";
 import Column from "./Column";
+import Controller from "./Controller";
 
 function App() {
 
@@ -81,6 +82,7 @@ function App() {
     return (
         <div>
             <Container>
+                <Controller />
                 <Row>
                     {columnList.map(el => <Column changeTaskStatus={changeTaskStatus} column={el} tasks={tasks}/>)}
                     {/*<Column changeTaskStatus={changeTaskStatus} title={'todo'} tasks={tasks}/>*/}

@@ -1,29 +1,25 @@
-import React from 'react';
-import {Col} from "reactstrap";
-import Task from "./Task";
+import React, {useState} from 'react';
+import {Modal, ModalHeader, ModalFooter, ModalBody, Button} from "reactstrap";
 
 
 function Controller(props) {
 
-    const {tasks, title, changeTaskStatus} = props
+    const [isModalOpen, setIsModalOpen] = useState(false)
 
 
     return (
-        <div>
-            <Col>
-                <h3>{title}</h3>
-                {tasks
-                    .filter(el => el.status === title)
-                    .sort((a, b) => b.priority - a.priority)
-                    .map(el =>
-                        <Task
-                            task={el}
-                            changeTaskStatus={changeTaskStatus}
-                        />)}
-
-            </Col>
-
-        </div>
+        <>
+            <Button onClick={() => setIsModalOpen(true)}>Add new Task</Button>
+            <Modal isOpen={isModalOpen}>
+                <ModalHeader>Add new Task</ModalHeader>
+                <ModalBody> </ModalBody>
+                <ModalFooter>
+                    <Button>Do Something</Button>
+                    {' '}
+                    <Button onClick={() => setIsModalOpen(false)}>Cancel</Button>
+                </ModalFooter>
+            </Modal>
+        </>
     );
 }
 
