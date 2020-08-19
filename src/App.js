@@ -27,26 +27,33 @@ function App() {
         {
             id: Math.random(),
             name: 'Fourth',
-            priority: 1,
+            priority: 2,
             status: 'review'
         }
     ]
 
-    const statues = ['todo', 'progress', 'review', 'done']
+    const statues = ['todo', 'progress', 'review', 'done'];
 
-    const [tasks, setTasks] = useState(taskList)
+    const taskPriority = [0, 1, 2];
+
+    const [tasks, setTasks] = useState(taskList);
 
     const changeTaskStatus = (taskId, direction) => {
         const newTasks = tasks.map(el => {
             if (el.id === taskId) {
-                if (direction === 'right') el.status = statues[statues.indexOf(el.status) + 1]
-                if (direction === 'left') el.status = statues[statues.indexOf(el.status) - 1]
+                if (direction === 'right')
+                    el.status = statues[statues.indexOf(el.status) + 1]
+                if (direction === 'left')
+                    el.status = statues[statues.indexOf(el.status) - 1]
+                if (direction === 'up')
+                    el.priority = taskPriority[taskPriority.indexOf(el.priority) + 1]
+                if (direction === 'down')
+                    el.priority = taskPriority[taskPriority.indexOf(el.priority) + 1]
             }
             return el;
         })
         setTasks(newTasks)
     }
-
 
     return (
         <div>
