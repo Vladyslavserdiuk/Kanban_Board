@@ -5,7 +5,7 @@ import Task from "./Task";
 
 function Column(props) {
 
-    const {tasks, changeTaskStatus, column} = props
+    const {tasks, changeTaskStatus, column, deleteTask} = props
 
 
     return (
@@ -19,6 +19,7 @@ function Column(props) {
                         <Task
                             task={el}
                             changeTaskStatus={changeTaskStatus}
+                            deleteTask={deleteTask}
                         />)}
 
             </Col>

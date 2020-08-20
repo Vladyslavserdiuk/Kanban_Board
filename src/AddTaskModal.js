@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {Modal, ModalHeader, ModalFooter, ModalBody, Label, Row, Col, Input, Button} from "reactstrap";
 
 
-function Controller(props) {
+function AddTaskModal(props) {
 
     const {addNewTask} = props
 
@@ -64,4 +64,4 @@ function Controller(props) {
     );
 }
 
-export default Controller;
+export default AddTaskModal;
