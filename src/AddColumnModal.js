@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Modal, ModalHeader, ModalFooter, ModalBody, Label, Row, Col, Input, Button} from "reactstrap";
+import {Modal, ModalHeader, ModalFooter, ModalBody, Label, Input, Button} from "reactstrap";
 
 
 function AddColumnModal(props) {
